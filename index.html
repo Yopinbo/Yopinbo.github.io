@@ -149,10 +149,10 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputEmail1">Message</label>
-                <textarea class="form-control" rows="6" name="entry.276570420" placeholder="Text input"></textarea>
+                <textarea class="form-control" rows="6" name="entry.276570420" placeholder="Text input" id="messageText"></textarea>
               </div>
 
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn btn-default" id="ButtonSubmit" onclick="postContactToGoogle()" >Submit</button>
             </form>
         </div>
 
@@ -167,16 +167,14 @@
     <!-- google form script -->
     <script>
         function postContactToGoogle() {
-            var email = $('#Email').val();
-            var first = $('#First').val();
-            var last = $('#Last').val();
-            var company = $('#Company').val();
+            var name = $('#exampleInputName2').val();
+            var email = $('#exampleInputEmail1').val();
+            var message = $('#messageText').val();
 
                 $.ajax({
                     url: "https://docs.google.com/forms/d/1BqFhJrXNXFdE6C9VbrUU1P2ds_t7fcnVreApT_GcimQ/formResponse",
-                    data: { "entry_1402836733": email,
-                    "entry_1874720748": first, "entry_2092106103":
-                    last, "entry_944373055": company },
+                    data: { "entry.1971900433": name,
+                    "entry.534091724": email, "entry.276570420": message },
                     type: "POST",
                     dataType: "xml",
                     statusCode: {
