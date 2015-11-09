@@ -71,6 +71,7 @@ body {
     color: white;
 }
 .navbar-brand>img {
+    border-radius: 50%;
     height: 52px;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
